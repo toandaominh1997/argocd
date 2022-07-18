@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kge
+  name: fastapi
   labels:
-    app: kge
+    app: fastapi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kge
+      app: fastapi
   template:
     metadata:
       labels:
-        app: kge
+        app: fastapi
     spec:
       containers:
-        - name: kge
-          image: grows-fastapi:latest
+        - name: fastapi
+          image: toandaominh1997/grow-fastapi:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 1234
@@ -24,12 +24,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: kge
+  name: fastapi
   labels:
-    app: kge
+    app: fastapi
 spec:
   selector:
-    app: kge
+    app: fastapi
   ports:
     - port: 1234
       protocol: TCP
