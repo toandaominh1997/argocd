@@ -4,7 +4,6 @@ metadata:
   name: kge
   labels:
     app: kge
-  namespace: om
 spec:
   replicas: 1
   selector:
@@ -28,7 +27,6 @@ metadata:
   name: kge
   labels:
     app: kge
-  namespace: om
 spec:
   selector:
     app: kge
